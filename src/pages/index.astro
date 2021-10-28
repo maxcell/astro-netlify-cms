@@ -1,0 +1,12 @@
+---
+	import BaseLayout from '../layouts/BaseLayout.astro'
+	const data = Astro.fetchContent('./blog/*.md')
+---
+<BaseLayout>
+	<h1>Welcome to my website</h1>
+	<h3>Blog Roll</h3>
+	  <ol>{data.map((post) => {
+		return <li><a href={post.url}>{post.title}</a></li>
+	})}
+		</ol>
+</BaseLayout>
